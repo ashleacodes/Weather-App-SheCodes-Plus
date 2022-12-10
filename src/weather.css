@@ -1,0 +1,62 @@
+body {
+  background-color: #dbdbe3;
+  font-family: "Raleway", sans-serif;
+}
+.container {
+  max-width: 80%;
+  margin-top: 65px;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  max-width: 100%;
+  width: 40rem;
+  background-color: #f8f9fa;
+  opacity: 0.7;
+}
+
+.card-body {
+  max-width: 80%;
+  width: 35rem;
+  display: block;
+  margin: 0 auto;
+}
+.btn-primary {
+  opacity: 0.8;
+}
+.btn-info {
+  opacity: 0.8;
+  color: aliceblue;
+}
+input {
+  font-style: italic;
+}
+ul {
+  list-style: none;
+  text-transform: capitalize;
+}
+.location-current {
+  font-size: 25px;
+  padding: 0;
+}
+
+.col-6 {
+  padding: 0;
+  margin: 0;
+}
+
+.weather-current {
+  font-size: 40px;
+  text-align: right;
+  position: relative;
+  top: -15px;
+}
+.temperature {
+  font-size: 20px;
+  position: relative;
+  top: -14px;
+}
+.weather-details {
+  font-size: 15px;
+  text-align: right;
+}
