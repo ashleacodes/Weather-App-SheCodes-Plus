@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App Wireframe</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/111784d152.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/weather.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <form id="search-form">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search city or location..."
+              autocomplete="off"
+              autofocus="on"
+              id="search-input"
+            />
+            <input type="submit" class="btn btn-primary" value="Search" />
+            <input type="submit" class="btn btn-info" value="Current" />
+          </form>
+          <br />
+          <div class="row">
+            <div class="col-6">
+              <div class="location-current">
+                <ul>
+                  <li id="current-city">Adelaide</li>
+                  <li id="current-time">Sunday 1:00pm</li>
+                  <li id="current-weather">Cloudy</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="weather-current">
+                <i id="current-temp"> 18 </i
+                ><span class="temperature">
+                  <a href="#" id="celsius-link">°C</a> |<a
+                    href="#"
+                    id="fahrenheit-link"
+                    >°F</a
+                  >
+                  <br />
+                </span>
+                <div class="weather-details">
+                  <ul>
+                    <li id="humid">Humidity: 85%</li>
+                    <li id="windy">Wind: 23km/h</li>
+                    <li id="precip">Precipitation: 50mm</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="row">
+            <div class="col-2">
+              Mon <i class="fa-solid fa-cloud-rain"> </i> 18°C
+            </div>
+            <div class="col-2">
+              Tues <i class="fa-solid fa-cloud-bolt"> </i> 20°C
+            </div>
+            <div class="col-2">
+              Wed <i class="fa-solid fa-cloud-sun-rain"> </i> 19°C
+            </div>
+            <div class="col-2">
+              Thur <i class="fa-solid fa-cloud-rain"> </i> 21°C
+            </div>
+            <div class="col-2">
+              Fri <i class="fa-solid fa-cloud-sun-rain"> </i> 22°C
+            </div>
+            <div class="col-2">
+              Sat <i class="fa-solid fa-cloud-sun"> </i> 20°C
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
