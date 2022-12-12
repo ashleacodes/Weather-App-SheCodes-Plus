@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Raleway", sans-serif;
+  text-transform: capitalize;
 }
 .container {
   max-width: 500px;
@@ -34,35 +35,39 @@ input {
 }
 ul {
   list-style: none;
-  text-transform: capitalize;
+
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 li {
   margin: 0;
   padding: 0;
 }
+h2,
+h4 {
+  text-align: center;
+}
 .row {
-  margin: 10px 25px 5px 25px;
+  margin: 10px 20px 5px 20px;
 }
 .location-current {
   font-size: 25px;
 }
 .weather-current {
   font-size: 40px;
-  text-align: right;
-  position: relative;
-  top: -15px;
+
+  justify-content: center;
 }
 .temperature {
   font-size: 20px;
-  position: relative;
-  top: -14px;
 }
 .weather-details {
   font-size: 15px;
-  text-align: right;
+
+  justify-content: center;
 }
+
 .col-2 {
   padding: 15px;
 }

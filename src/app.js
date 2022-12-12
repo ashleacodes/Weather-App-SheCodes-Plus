@@ -14,7 +14,7 @@ let hour = currentTime.getHours();
 let minutes = currentTime.getMinutes();
 
 let heading = document.querySelector("#current-time");
-heading.innerHTML = `${day}, ${hour}:${minutes}`;
+heading.innerHTML = `${hour}:${minutes}`;
 
 //Open Weather Map Feature
 function search(event) {
