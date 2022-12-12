@@ -10,11 +10,31 @@ let days = [
   "Saturday",
 ];
 let day = days[currentTime.getDay()];
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+let month = months[currentTime.getMonth()];
 let hour = currentTime.getHours();
 let minutes = currentTime.getMinutes();
+let year = currentTime.getFullYear();
+let date = currentTime.getDate();
 
 let heading = document.querySelector("#current-time");
 heading.innerHTML = `${hour}:${minutes}`;
+
+let secondHeading = document.querySelector("#current-date");
+secondHeading.innerHTML = `${day}, ${date} ${month} ${year}`;
 
 //Open Weather Map Feature
 function search(event) {
