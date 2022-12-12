@@ -23,6 +23,7 @@ body {
     rgb(143, 170, 210) 0%,
     rgb(255, 177, 177) 90%
   );
+  border-radius: 30px;
 }
 .card-body {
   max-width: 80%;
