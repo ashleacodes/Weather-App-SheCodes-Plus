@@ -1,9 +1,11 @@
 body {
-  background-color: #dbdbe3;
+  background-image: url("https://onlyvectorbackgrounds.com/wp-content/uploads/2018/10/Abstract-Geometric-Background-Grey.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Raleway", sans-serif;
 }
 .container {
-  max-width: 80%;
+  max-width: 500px;
   margin-top: 65px;
   display: flex;
   justify-content: center;
