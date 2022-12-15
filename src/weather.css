@@ -59,6 +59,15 @@ ul {
   display: block;
   margin: 0 auto;
 }
+.active {
+  color: #434242;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: #434242;
+}
 .row {
   margin: 10px 20px 5px 20px;
 }
