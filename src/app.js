@@ -25,16 +25,22 @@ let months = [
   "Dec",
 ];
 let month = months[currentTime.getMonth()];
-let hour = currentTime.getHours();
-let minutes = currentTime.getMinutes();
 let year = currentTime.getFullYear();
-let date = currentTime.getDate();
 let milliseconds = currentTime.getMilliseconds();
 let seconds = currentTime.getSeconds();
 let time = currentTime.getTime();
+let date = currentTime.getDate();
+let hour = currentTime.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
+let minutes = currentTime.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
 let heading = document.querySelector("#current-time");
-heading.innerHTML = `${hour}:${minutes}:${seconds}`;
+heading.innerHTML = `${hour}:${minutes}`;
 
 let secondHeading = document.querySelector("#current-date");
 secondHeading.innerHTML = `${day}, ${date} ${month} ${year}`;
@@ -88,10 +94,15 @@ function retrievePosition(position) {
 
   axios.get(apiUrl).then(showTemperature);
 }
-navigator.geolocation.getCurrentPosition(retrievePosition);
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 //Change Temperature Units Feature
-
 let celsiusTemperature = null;
 
 function showCelsius(event) {

@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://onlyvectorbackgrounds.com/wp-content/uploads/2018/10/Abstract-Geometric-Background-Grey.jpg");
+  background-image: url("/images/Abstract-Geometric-Background-Grey.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Raleway", sans-serif;
@@ -18,11 +18,6 @@ body {
   width: 40rem;
   background-color: #f8f9fa;
   opacity: 0.7;
-  background: radial-gradient(
-    circle at 0.4% -0.6%,
-    rgb(143, 170, 210) 0%,
-    rgb(255, 177, 177) 90%
-  );
   border-radius: 30px;
 }
 .card-body {
