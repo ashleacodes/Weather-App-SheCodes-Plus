@@ -45,6 +45,29 @@ heading.innerHTML = `${hour}:${minutes}`;
 let secondHeading = document.querySelector("#current-date");
 secondHeading.innerHTML = `${day}, ${date} ${month} ${year}`;
 
+//Forecast predictions
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <div class="forecast-date">${day}</div>
+              <i class="fa-solid fa-cloud-rain"> </i>
+              <div class="forecast-temp">
+                <span class="forecast-temp-max">18°C </span>
+                <span class="forecast-temp-min"> 16°C</span>
+              </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Open Weather Map Feature
 function search(event) {
   event.preventDefault();
@@ -124,3 +147,5 @@ function showFahrenheit(event) {
 }
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", showFahrenheit);
+
+displayForecast();

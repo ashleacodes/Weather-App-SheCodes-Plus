@@ -63,8 +63,16 @@ ul {
   text-decoration: none;
   color: #434242;
 }
-.row {
+.weather-forecast {
   margin: 10px 20px 5px 20px;
+  text-align: center;
+}
+.forecast-date {
+  font-size: 17px;
+}
+.forecast-temp-max,
+.forecast-temp-min {
+  font-size: 14px;
 }
 p {
   text-align: center;
