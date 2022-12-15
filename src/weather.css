@@ -1,6 +1,5 @@
 body {
-  background-image: url("https://i.gifer.com/XFbw.gif");
-  background-repeat: repeat;
+  background-image: url("https://i.pinimg.com/originals/85/6f/31/856f31d9f475501c7552c97dbe727319.jpg");
   background-size: cover;
   font-family: "Raleway", sans-serif;
   text-transform: capitalize;
@@ -16,8 +15,12 @@ body {
 .card {
   max-width: 100%;
   width: 40rem;
-  background-color: #f8f9fa;
-  opacity: 0.9;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(255, 168, 114) 0%,
+    rgb(254, 106, 164) 100.2%
+  );
+  opacity: none;
   border-radius: 30px;
 }
 .card-body {
