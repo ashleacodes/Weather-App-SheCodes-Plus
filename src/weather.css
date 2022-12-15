@@ -44,6 +44,7 @@ ul {
   padding: 0;
   display: block;
 }
+
 #current-temp {
   font-size: 40px;
 }
@@ -52,6 +53,10 @@ ul {
 }
 #fahrenheit-link {
   font-size: 30px;
+}
+#icon {
+  display: block;
+  margin: 0 auto;
 }
 .row {
   margin: 10px 20px 5px 20px;

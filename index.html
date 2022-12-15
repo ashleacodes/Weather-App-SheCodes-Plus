@@ -46,14 +46,20 @@
             <input type="submit" class="btn btn-info" value="Current" />
           </form>
           <br />
-          <h2 id="current-city"><strong>Adelaide</strong></h2>
+          <h2 id="current-city">Adelaide</h2>
           <h4 id="current-date">Monday 12 Dec 2022</h4>
 
           <div class="col">
-            <i id="current-temp">18 </i>
+            <strong id="current-temp">18 </strong>
             <a href="#" id="celsius-link">°C</a> |
             <a href="#" id="fahrenheit-link"> °F</a>
-
+            <div class="d-flex">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="mostly cloudy"
+                id="icon"
+              />
+            </div>
             <div class="weather-details">
               <ul>
                 <li>Humidity: <span id="humid">85</span>%</li>
@@ -62,7 +68,7 @@
             </div>
           </div>
         </div>
-        <h4 id="current-weather"><strong>Cloudy</strong></h4>
+        <h4 id="current-weather">Cloudy</h4>
         <h4 id="current-time">1:00pm</h4>
         <hr />
 
