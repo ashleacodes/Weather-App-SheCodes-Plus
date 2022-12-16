@@ -1,50 +1,48 @@
-function formateDate(timestamp) {
-  let currentTime = new Date(timestamp);
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[currentTime.getDay()];
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  let month = months[currentTime.getMonth()];
-  let year = currentTime.getFullYear();
-  let milliseconds = currentTime.getMilliseconds();
-  let seconds = currentTime.getSeconds();
-  let time = currentTime.getTime();
-  let date = currentTime.getDate();
-  let hour = currentTime.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minutes = currentTime.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  let heading = document.querySelector("#current-time");
-  heading.innerHTML = `${hour}:${minutes}`;
-
-  let secondHeading = document.querySelector("#current-date");
-  secondHeading.innerHTML = `${day}, ${date} ${month} ${year}`;
+let currentTime = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[currentTime.getDay()];
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+let month = months[currentTime.getMonth()];
+let year = currentTime.getFullYear();
+let milliseconds = currentTime.getMilliseconds();
+let seconds = currentTime.getSeconds();
+let time = currentTime.getTime();
+let date = currentTime.getDate();
+let hour = currentTime.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
 }
+let minutes = currentTime.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+
+let heading = document.querySelector("#current-time");
+heading.innerHTML = `${hour}:${minutes}`;
+
+let secondHeading = document.querySelector("#current-date");
+secondHeading.innerHTML = `${day}, ${date} ${month} ${year}`;
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -98,7 +96,6 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#current-weather");
   let humidityElement = document.querySelector("#humid");
   let windElement = document.querySelector("#windy");
-  let dateElement = document.querySelector("#current-date");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
@@ -108,7 +105,6 @@ function showTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formateDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
