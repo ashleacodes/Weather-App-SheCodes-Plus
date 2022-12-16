@@ -1,48 +1,50 @@
-let currentTime = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[currentTime.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[currentTime.getMonth()];
-let year = currentTime.getFullYear();
-let milliseconds = currentTime.getMilliseconds();
-let seconds = currentTime.getSeconds();
-let time = currentTime.getTime();
-let date = currentTime.getDate();
-let hour = currentTime.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minutes = currentTime.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
+function formateDate(timestamp) {
+  let currentTime = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[currentTime.getDay()];
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[currentTime.getMonth()];
+  let year = currentTime.getFullYear();
+  let milliseconds = currentTime.getMilliseconds();
+  let seconds = currentTime.getSeconds();
+  let time = currentTime.getTime();
+  let date = currentTime.getDate();
+  let hour = currentTime.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = currentTime.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let heading = document.querySelector("#current-time");
-heading.innerHTML = `${hour}:${minutes}`;
+  let heading = document.querySelector("#current-time");
+  heading.innerHTML = `${hour}:${minutes}`;
 
-let secondHeading = document.querySelector("#current-date");
-secondHeading.innerHTML = `${day}, ${date} ${month} ${year}`;
+  let secondHeading = document.querySelector("#current-date");
+  secondHeading.innerHTML = `${day}, ${date} ${month} ${year}`;
+}
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -106,6 +108,7 @@ function showTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formateDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -114,7 +117,17 @@ function showTemperature(response) {
 
   getForecast(response.data.coord);
 }
+function search(city) {
+  let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#search-input");
+  search(cityInput.value);
+}
 function retrievePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -126,14 +139,6 @@ function retrievePosition(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(retrievePosition);
-}
-function search() {
-  let cityInput = document.querySelector("#search-input");
-  let paragraph = document.querySelector("#current-city");
-  paragraph.innerHTML = `${cityInput.value}`;
-  let apiKey = "aa09763d916df0424c840d55bfc2d2c9";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
 }
 
 function showCelsius(event) {
@@ -155,7 +160,7 @@ function showFahrenheit(event) {
 let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
@@ -165,3 +170,5 @@ celsius.addEventListener("click", showCelsius);
 
 let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", showFahrenheit);
+
+search("Paris");
